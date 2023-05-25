@@ -1,0 +1,27 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ringsound : MonoBehaviour
+{
+    public AudioSource ringSource;
+
+    void Start()
+    {
+        ringSource = GetComponent<AudioSource>();
+    }
+
+
+    void Update()
+    {
+
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag != "sonic")
+        {
+            return;
+        }
+        ringSource.Play();
+    }
+}
